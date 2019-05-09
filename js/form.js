@@ -2,16 +2,16 @@
 
 try {
   // Initialize Firebase
-  // const config = {
-  //   apiKey: "AIzaSyAQLDZqt0cpzBusMi34m_skaiWhTYxbHfE",
-  //   authDomain: "portfolio-9f1f1.firebaseapp.com",
-  //   databaseURL: "https://portfolio-9f1f1.firebaseio.com",
-  //   projectId: "portfolio-9f1f1",
-  //   storageBucket: "portfolio-9f1f1.appspot.com",
-  //   messagingSenderId: "543603757417"
-  // };
+  const config = {
+    apiKey: "AIzaSyAQLDZqt0cpzBusMi34m_skaiWhTYxbHfE",
+    authDomain: "portfolio-9f1f1.firebaseapp.com",
+    databaseURL: "https://portfolio-9f1f1.firebaseio.com",
+    projectId: "portfolio-9f1f1",
+    storageBucket: "portfolio-9f1f1.appspot.com",
+    messagingSenderId: "543603757417"
+  };
 
-  // firebase.initializeApp(config);
+  firebase.initializeApp(config);
 
   //Reference messages collection
   const messagesRef = firebase.database().ref("messages");
@@ -43,13 +43,16 @@ try {
     //Hide alert after 3 seconds
     setTimeout(() => {
       formAlert.innerHTML = "Submit";
-      formAlert.style.backgroundColor = "#586c8c";
-      formAlert.style.color = "#ffffff";
+      formAlert.style.backgroundColor = "grey";
+      formAlert.setAttribute("disabled", "disabled");
     }, 3000);
 
     //Clear form
     const reset = document.getElementById("contactForm");
     reset.reset();
+
+    //Clear reCaptcha
+    grecaptcha.reset();
   };
 
   //Listen for from submit
@@ -74,4 +77,10 @@ catch (err) {
   formAlert.innerHTML = "Try later";
   formAlert.style.backgroundColor = "#a20000";
   formAlert.disabled = "true";
+}
+
+//RECAPTCHA VERIFICATION
+function verifyCaptcha() {
+  const formAlert = document.querySelector(".grid__formAlert");
+  formAlert.removeAttribute('disabled');
 }

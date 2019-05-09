@@ -291,7 +291,9 @@ body {
 .grid {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 250px min-content min-content min-content min-content min-content min-content min-content min-content;
+  grid-template-rows: 250px min-content min-content 
+                      min-content min-content min-content 
+                      min-content min-content min-content;
   grid-template-areas:
     "grid__slideShow"
 	  "grid__terms"  //Terms
@@ -305,14 +307,18 @@ body {
 
   @media only screen and (min-width: 600px) {
     & {
-      grid-template-rows: 600px min-content min-content min-content min-content min-content min-content min-content min-content;
+      grid-template-rows: 600px min-content min-content 
+                          min-content min-content min-content 
+                          min-content min-content min-content;
     }
   }
 
   @media only screen and (min-width: 960px) {
     & {
       grid-template-columns: 1fr 1fr;
-      grid-template-rows: 500px min-content min-content min-content min-content min-content min-content;
+      grid-template-rows: 500px min-content min-content
+                          min-content min-content 
+                          min-content min-content;
       grid-template-areas:
         "grid__slideShow grid__slideShow"
 		    "grid__terms grid__terms"  //Terms
@@ -652,6 +658,11 @@ body {
         width: 30%;
       }
     }
+  }
+
+  & [disabled] {
+    background-color: gray;
+    cursor: initial;
   }
 
   &__formRow--full {
