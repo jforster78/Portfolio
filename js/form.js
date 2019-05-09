@@ -1,17 +1,18 @@
 "use strict";
 
+//DATA COLLECTION AND FORM SUBMISSION
 try {
   // Initialize Firebase
-  const config = {
-    apiKey: "AIzaSyAQLDZqt0cpzBusMi34m_skaiWhTYxbHfE",
-    authDomain: "portfolio-9f1f1.firebaseapp.com",
-    databaseURL: "https://portfolio-9f1f1.firebaseio.com",
-    projectId: "portfolio-9f1f1",
-    storageBucket: "portfolio-9f1f1.appspot.com",
-    messagingSenderId: "543603757417"
-  };
+  // const config = {
+  //   apiKey: "AIzaSyAQLDZqt0cpzBusMi34m_skaiWhTYxbHfE",
+  //   authDomain: "portfolio-9f1f1.firebaseapp.com",
+  //   databaseURL: "https://portfolio-9f1f1.firebaseio.com",
+  //   projectId: "portfolio-9f1f1",
+  //   storageBucket: "portfolio-9f1f1.appspot.com",
+  //   messagingSenderId: "543603757417"
+  // };
 
-  firebase.initializeApp(config);
+  // firebase.initializeApp(config);
 
   //Reference messages collection
   const messagesRef = firebase.database().ref("messages");
@@ -72,6 +73,7 @@ try {
   };
 } 
 
+//Catches Errors
 catch (err) {
   const formAlert = document.querySelector(".grid__formAlert");
   formAlert.innerHTML = "Try later";
