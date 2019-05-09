@@ -1,0 +1,17 @@
+# Don't track content of these folders
+
+public/
+
+
+
+# Compiled source #
+
+*.json
+*.log
+.editorconfig
+.firebaserc
+
+
+
+
+

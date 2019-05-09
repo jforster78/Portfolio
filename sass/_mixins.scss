@@ -1,0 +1,42 @@
+//_Mixins
+@mixin smDesktop() {
+  width: 960px;
+  margin: auto;
+}
+
+@mixin lgDesktop() {
+  width: 1100px;
+  margin: auto;
+}
+@mixin xlgDesktop() {
+  width: 1300px;
+  margin: auto;
+}
+
+@mixin background-images() {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+@mixin quoteMarks($left, $content) {
+  font-family: 'Arial, sans-serif';
+  font-size: 3rem;
+  font-weight: 700;
+  position: relative;
+  top: .5rem;
+  left: $left;
+  content: $content;
+  color: $bgColour;
+}
+
+@mixin terms() {
+  background-color: $gridBgColour;
+  padding: 0 2rem 2rem;
+
+  @media only screen and (min-width: 600px) {
+    & {
+      padding: 0 4rem 2rem;
+    }
+  }
+}
