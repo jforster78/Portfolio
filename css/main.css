@@ -586,8 +586,8 @@ body {
   }
 }
 .grid [disabled] {
-  background-color: gray;
-  cursor: initial;
+  cursor: not-allowed;
+  opacity: .3;
 }
 .grid__formRow--full {
   grid-column: 1 / 3;

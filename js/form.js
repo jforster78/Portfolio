@@ -3,16 +3,16 @@
 //DATA COLLECTION AND FORM SUBMISSION
 try {
   // Initialize Firebase
-  // const config = {
-  //   apiKey: "AIzaSyAQLDZqt0cpzBusMi34m_skaiWhTYxbHfE",
-  //   authDomain: "portfolio-9f1f1.firebaseapp.com",
-  //   databaseURL: "https://portfolio-9f1f1.firebaseio.com",
-  //   projectId: "portfolio-9f1f1",
-  //   storageBucket: "portfolio-9f1f1.appspot.com",
-  //   messagingSenderId: "543603757417"
-  // };
+  const config = {
+    apiKey: "AIzaSyAQLDZqt0cpzBusMi34m_skaiWhTYxbHfE",
+    authDomain: "portfolio-9f1f1.firebaseapp.com",
+    databaseURL: "https://portfolio-9f1f1.firebaseio.com",
+    projectId: "portfolio-9f1f1",
+    storageBucket: "portfolio-9f1f1.appspot.com",
+    messagingSenderId: "543603757417"
+  };
 
-  // firebase.initializeApp(config);
+  //firebase.initializeApp(config);
 
   //Reference messages collection
   const messagesRef = firebase.database().ref("messages");
@@ -44,7 +44,8 @@ try {
     //Hide alert after 3 seconds
     setTimeout(() => {
       formAlert.innerHTML = "Submit";
-      formAlert.style.backgroundColor = "grey";
+      formAlert.style.backgroundColor = "#586c8c";
+      formAlert.style.opacity = ".3";
       formAlert.setAttribute("disabled", "disabled");
     }, 3000);
 
@@ -73,7 +74,7 @@ try {
   };
 } 
 
-//Catches Errors
+//Catches any errors
 catch (err) {
   const formAlert = document.querySelector(".grid__formAlert");
   formAlert.innerHTML = "Try later";
@@ -85,4 +86,5 @@ catch (err) {
 function verifyCaptcha() {
   const formAlert = document.querySelector(".grid__formAlert");
   formAlert.removeAttribute('disabled');
+  formAlert.style.opacity = "1";
 }

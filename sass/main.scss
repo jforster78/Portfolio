@@ -661,8 +661,8 @@ body {
   }
 
   & [disabled] {
-    background-color: gray;
-    cursor: initial;
+    cursor: not-allowed;
+    opacity: .3;
   }
 
   &__formRow--full {
