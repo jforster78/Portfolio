@@ -4,15 +4,16 @@
 try {
   // Initialize Firebase
   const config = {
-    apiKey: "AIzaSyAQLDZqt0cpzBusMi34m_skaiWhTYxbHfE",
-    authDomain: "portfolio-9f1f1.firebaseapp.com",
-    databaseURL: "https://portfolio-9f1f1.firebaseio.com",
-    projectId: "portfolio-9f1f1",
-    storageBucket: "portfolio-9f1f1.appspot.com",
-    messagingSenderId: "543603757417"
+    apiKey: "AIzaSyAf1MfuEzHphWug0xdWXBduNj-P5Bdf3hc",
+    authDomain: "portfolio-e01b4.firebaseapp.com",
+    databaseURL: "https://portfolio-e01b4.firebaseio.com",
+    projectId: "portfolio-e01b4",
+    storageBucket: "portfolio-e01b4.appspot.com",
+    messagingSenderId: "444285138274",
+    // appId: "1:444285138274:web:1480b1dbe555ee59"
   };
 
-  //firebase.initializeApp(config);
+  firebase.initializeApp(config);
 
   //Reference messages collection
   const messagesRef = firebase.database().ref("messages");
@@ -85,4 +86,9 @@ catch (err) {
 function verifyCaptcha() {
   const formAlert = document.querySelector(".grid__formAlert");
   formAlert.removeAttribute('disabled');
+}
+function expiredCaptcha() {
+  const formAlert = document.querySelector(".grid__formAlert");
+  formAlert.setAttribute('disabled', "disabled");
+  formAlert.style.opacity = ".3";
 }
