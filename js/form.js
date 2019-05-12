@@ -73,12 +73,11 @@ try {
     });
   };
 } 
-
-//Catches any errors
 catch (err) {
   const formAlert = document.querySelector(".grid__formAlert");
   formAlert.innerHTML = "Try later";
   formAlert.style.backgroundColor = "#a20000";
+  formAlert.style.opacity = "1";
   formAlert.disabled = "true";
 }
 
@@ -86,5 +85,4 @@ catch (err) {
 function verifyCaptcha() {
   const formAlert = document.querySelector(".grid__formAlert");
   formAlert.removeAttribute('disabled');
-  formAlert.style.opacity = "1";
 }
