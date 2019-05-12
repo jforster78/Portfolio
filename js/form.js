@@ -83,12 +83,17 @@ catch (err) {
 }
 
 //RECAPTCHA VERIFICATION
-function verifyCaptcha() {
-  const formAlert = document.querySelector(".grid__formAlert");
-  formAlert.removeAttribute('disabled');
-}
-function expiredCaptcha() {
-  const formAlert = document.querySelector(".grid__formAlert");
-  formAlert.setAttribute('disabled', "disabled");
-  formAlert.style.opacity = ".3";
-}
+window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('recaptcha', {
+  'callback': (response) => {
+    console.log("dataCallback", response);
+    const formAlert = document.querySelector(".grid__formAlert");
+    formAlert.removeAttribute('disabled');
+    formAlert.style.opacity = "1";
+  },
+  'expired-callback': () => {
+    const formAlert = document.querySelector(".grid__formAlert");
+    formAlert.setAttribute('disabled', "disabled");
+    formAlert.style.opacity = ".3";
+  }
+});
+window.recaptchaVerifier.render();
