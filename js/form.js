@@ -46,8 +46,8 @@ try {
     setTimeout(() => {
       formAlert.innerHTML = "Submit";
       formAlert.style.backgroundColor = "#586c8c";
-      formAlert.style.opacity = ".3";
-      formAlert.setAttribute("disabled", "disabled");
+      // formAlert.style.opacity = ".3";
+      // formAlert.setAttribute("disabled", "disabled");
     }, 3000);
 
     //Clear form
@@ -78,12 +78,13 @@ catch (err) {
   const formAlert = document.querySelector(".grid__formAlert");
   formAlert.innerHTML = "Try later";
   formAlert.style.backgroundColor = "#a20000";
-  formAlert.style.opacity = "1";
-  formAlert.disabled = "true";
+  // formAlert.style.opacity = "1";
+  // formAlert.disabled = "true";
 }
 
 //RECAPTCHA VERIFICATION
 window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('recaptcha', {
+  // 'size': 'invisible',
   'callback': (response) => {
     console.log("dataCallback", response);
     const formAlert = document.querySelector(".grid__formAlert");
