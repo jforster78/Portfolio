@@ -1,7 +1,8 @@
 "use strict";
 
 //DATA COLLECTION AND FORM SUBMISSION
-try {
+const formSubmission = (() => {
+
   // Initialize Firebase
   const config = {
     apiKey: "AIzaSyAf1MfuEzHphWug0xdWXBduNj-P5Bdf3hc",
@@ -42,13 +43,13 @@ try {
     formAlert.innerHTML = "Sent";
     formAlert.style.backgroundColor = "#00a90a";
 
-    //Hide alert after 3 seconds
+    //Hide alert after 5 seconds
     setTimeout(() => {
       formAlert.innerHTML = "Submit";
       formAlert.style.backgroundColor = "#586c8c";
       formAlert.style.opacity = ".3";
       formAlert.setAttribute("disabled", "disabled");
-    }, 3000);
+    }, 5000);
 
     //Clear form
     const reset = document.getElementById("contactForm");
@@ -58,7 +59,7 @@ try {
     grecaptcha.reset();
   };
 
-  //Listen for from submit
+  //Submit button
   const contactForm = document.getElementById("contactForm");
   contactForm.addEventListener("submit", submitForm);
 
@@ -73,28 +74,20 @@ try {
       message: message
     });
   };
-} 
-catch (err) {
-  const formAlert = document.querySelector(".grid__formAlert");
-  formAlert.innerHTML = "Try later";
-  formAlert.style.backgroundColor = "#a20000";
-  formAlert.style.opacity = "1";
-  formAlert.disabled = "true";
-}
 
-//RECAPTCHA VERIFICATION
-window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('recaptcha', {
-  // 'size': 'invisible',
-  'callback': (response) => {
-    console.log("dataCallback", response);
-    const formAlert = document.querySelector(".grid__formAlert");
-    formAlert.removeAttribute('disabled');
-    formAlert.style.opacity = "1";
-  },
-  'expired-callback': () => {
-    const formAlert = document.querySelector(".grid__formAlert");
-    formAlert.setAttribute('disabled', "disabled");
-    formAlert.style.opacity = ".3";
-  }
-});
-window.recaptchaVerifier.render();
+  //RECAPTCHA VERIFICATION
+  window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('recaptcha', {
+    "callback": response => {
+      console.log("dataCallback", response);
+      const formAlert = document.querySelector(".grid__formAlert");
+      formAlert.removeAttribute('disabled');
+      formAlert.style.opacity = "1";
+    },
+    "expired-callback": () => {
+      const formAlert = document.querySelector(".grid__formAlert");
+      formAlert.setAttribute('disabled', "disabled");
+      formAlert.style.opacity = ".3";
+    }
+  });
+  window.recaptchaVerifier.render();
+})();
