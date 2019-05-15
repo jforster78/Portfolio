@@ -1,21 +1,19 @@
 "use strict";
 
+//INITIALISE FIREBASE
+const config = {
+  apiKey: "AIzaSyAf1MfuEzHphWug0xdWXBduNj-P5Bdf3hc",
+  authDomain: "portfolio-e01b4.firebaseapp.com",
+  databaseURL: "https://portfolio-e01b4.firebaseio.com",
+  projectId: "portfolio-e01b4",
+  storageBucket: "portfolio-e01b4.appspot.com",
+  messagingSenderId: "444285138274",
+  // appId: "1:444285138274:web:1480b1dbe555ee59"
+};
+firebase.initializeApp(config);
+
 //DATA COLLECTION AND FORM SUBMISSION
 const formSubmission = (() => {
-
-  // Initialize Firebase
-  const config = {
-    apiKey: "AIzaSyAf1MfuEzHphWug0xdWXBduNj-P5Bdf3hc",
-    authDomain: "portfolio-e01b4.firebaseapp.com",
-    databaseURL: "https://portfolio-e01b4.firebaseio.com",
-    projectId: "portfolio-e01b4",
-    storageBucket: "portfolio-e01b4.appspot.com",
-    messagingSenderId: "444285138274",
-    // appId: "1:444285138274:web:1480b1dbe555ee59"
-  };
-
-  firebase.initializeApp(config);
-
   //Reference messages collection
   const messagesRef = firebase.database().ref("messages");
 
@@ -74,20 +72,20 @@ const formSubmission = (() => {
       message: message
     });
   };
-
-  //RECAPTCHA VERIFICATION
-  window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('recaptcha', {
-    "callback": response => {
-      console.log("dataCallback", response);
-      const formAlert = document.querySelector(".grid__formAlert");
-      formAlert.removeAttribute('disabled');
-      formAlert.style.opacity = "1";
-    },
-    "expired-callback": () => {
-      const formAlert = document.querySelector(".grid__formAlert");
-      formAlert.setAttribute('disabled', "disabled");
-      formAlert.style.opacity = ".3";
-    }
-  });
-  window.recaptchaVerifier.render();
 })();
+
+//RECAPTCHA VERIFICATION
+window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('recaptcha', {
+  "callback": response => {
+    console.log("dataCallback", response);
+    const formAlert = document.querySelector(".grid__formAlert");
+    formAlert.removeAttribute('disabled');
+    formAlert.style.opacity = "1";
+  },
+  "expired-callback": () => {
+    const formAlert = document.querySelector(".grid__formAlert");
+    formAlert.setAttribute('disabled', "disabled");
+    formAlert.style.opacity = ".3";
+  }
+});
+window.recaptchaVerifier.render();
