@@ -776,9 +776,21 @@ body {
 	text-decoration: none;
 	color: $whiteColour;
 	  
-	&:hover {
-	  text-decoration: underline;
-	}
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__social-media-icon {
+    color:  $whiteColour;
+    width: 3rem;
+    padding: 2rem 1rem;
+
+    @media screen and (max-width: 374px) {
+      & {
+        padding: 2rem 0;
+      }
+    }
   }
 }
 

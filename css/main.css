@@ -704,6 +704,16 @@ body {
 .footer__links:hover {
   text-decoration: underline;
 }
+.footer__social-media-icon {
+  color: #fff;
+  width: 3rem;
+  padding: 2rem 1rem;
+}
+@media screen and (max-width: 374px) {
+  .footer__social-media-icon {
+    padding: 2rem 0;
+  }
+}
 
 /* ==========================================================================
    Helper classes
