@@ -119,7 +119,7 @@ const scrollToTheTop = (() => {
   const scrollStep = () => {
     window.scrollY === 0
       ? clearInterval(intervalId)
-      : window.scroll(0, window.scrollY - 50);
+      : window.scroll(0, window.scrollY - 100);
   };
   //Scroll every 16 milliseconds
   const scrollToTop = () => {
