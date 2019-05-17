@@ -256,7 +256,7 @@ body {
   grid-template-columns: 1fr;
   grid-template-rows: 250px -webkit-min-content min-content  -webkit-min-content min-content -webkit-min-content  -webkit-min-content min-content -webkit-min-content;
   grid-template-rows: 250px min-content min-content  min-content min-content min-content  min-content min-content min-content;
-  grid-template-areas: "grid__slideShow" "grid__terms" "grid__privacy" "grid__about" "grid__quoteContainer" "grid__help" "grid__portfolio" "grid__process" "grid__form";
+  grid-template-areas: "grid__slideShow" "grid__terms" "grid__privacy" "grid__car" "grid__about" "grid__quoteContainer" "grid__help" "grid__portfolio" "grid__process" "grid__form";
 }
 @media only screen and (min-width: 600px) {
   .grid {
@@ -269,7 +269,7 @@ body {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 500px -webkit-min-content min-content -webkit-min-content min-content  -webkit-min-content min-content;
     grid-template-rows: 500px min-content min-content min-content min-content  min-content min-content;
-    grid-template-areas: "grid__slideShow grid__slideShow" "grid__terms grid__terms" "grid__privacy grid__privacy" "grid__about grid__quoteContainer" "grid__help grid__help" "grid__portfolio grid__portfolio" "grid__process grid__form";
+    grid-template-areas: "grid__slideShow grid__slideShow" "grid__terms grid__terms" "grid__privacy grid__privacy" "grid__car grid__car" "grid__about grid__quoteContainer" "grid__help grid__help" "grid__portfolio grid__portfolio" "grid__process grid__form";
   }
 }
 @media only screen and (min-width: 1024px) {
@@ -413,7 +413,7 @@ body {
   .grid__helpRow {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    padding-bottom: 3rem;
+    padding-bottom: 2rem;
   }
 }
 .grid__helpColumn {
@@ -459,6 +459,10 @@ body {
   background-color: #191919;
   color: #fff;
 }
+.grid__portfolio--white {
+  background-color: #fff;
+  color: #191919;
+}
 .grid__portfolioContainer {
   display: grid;
   grid-template-columns: 1fr;
@@ -477,8 +481,21 @@ body {
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
+@media only screen and (min-width: 600px) {
+  .grid__portfolioContainer--space {
+    grid-template-columns: 1fr;
+    padding: 1rem 4rem 4rem;
+    grid-gap: 4rem;
+  }
+}
+@media only screen and (min-width: 960px) {
+  .grid__portfolioContainer--space {
+    grid-template-columns: 2fr 1fr;
+  }
+}
 .grid__portfolioImage {
   width: 100%;
+  border: 1px solid #191919;
 }
 .grid__process {
   grid-area: grid__process;
@@ -602,7 +619,6 @@ body {
 .grid__terms {
   grid-area: grid__terms;
   background-color: #eef0f3;
-  padding: 0 2rem 2rem;
 }
 @media only screen and (min-width: 600px) {
   .grid__terms {
@@ -612,10 +628,18 @@ body {
 .grid__privacy {
   grid-area: grid__privacy;
   background-color: #eef0f3;
-  padding: 0 2rem 2rem;
 }
 @media only screen and (min-width: 600px) {
   .grid__privacy {
+    padding: 0 4rem 2rem;
+  }
+}
+.grid__car {
+  grid-area: grid__car;
+  background-color: #eef0f3;
+}
+@media only screen and (min-width: 600px) {
+  .grid__car {
     padding: 0 4rem 2rem;
   }
 }

@@ -297,7 +297,8 @@ body {
   grid-template-areas:
     "grid__slideShow"
 	  "grid__terms"  //Terms
-	  "grid__privacy"  //Privacy
+    "grid__privacy"  //Privacy
+    "grid__car"  //Car Spec
     "grid__about"
     "grid__quoteContainer"
     "grid__help"
@@ -322,7 +323,8 @@ body {
       grid-template-areas:
         "grid__slideShow grid__slideShow"
 		    "grid__terms grid__terms"  //Terms
-		    "grid__privacy grid__privacy"  //Privacy
+        "grid__privacy grid__privacy"  //Privacy
+        "grid__car grid__car"  //Car Spec
         "grid__about grid__quoteContainer"
         "grid__help grid__help"
         "grid__portfolio grid__portfolio"
@@ -467,7 +469,7 @@ body {
       & {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        padding-bottom: 3rem;
+        padding-bottom: 2rem;
       }
     }
   }
@@ -510,6 +512,12 @@ body {
     grid-area: grid__portfolio;
     background-color: $blackColour;
     color: $whiteColour;
+
+
+    &--white {
+      background-color: $whiteColour;
+      color: $blackColour;
+    }
   }
 
   &__portfolioContainer {
@@ -531,10 +539,27 @@ body {
         grid-template-columns: 1fr 1fr 1fr;
       }
     }
+
+    &--space {
+      @media only screen and (min-width: 600px) {
+        & {
+          grid-template-columns: 1fr;
+          padding: 1rem 4rem 4rem;
+          grid-gap: 4rem;
+        }
+      }
+    
+      @media only screen and (min-width: 960px) {
+        & {
+          grid-template-columns: 2fr 1fr;
+        }
+      }
+    }
   }
 
   &__portfolioImage {
     width: 100%;
+    border: 1px solid $blackColour;
   }
 
   //Process
@@ -687,6 +712,12 @@ body {
   //Privacy
   &__privacy {
     grid-area: grid__privacy;
+    @include terms();
+  }
+
+  //Car Spec
+  &__car {
+    grid-area: grid__car;
     @include terms();
   }
 
