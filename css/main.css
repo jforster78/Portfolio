@@ -469,6 +469,7 @@ body {
   .grid__portfolioContainer {
     grid-template-columns: 1fr 1fr;
     padding: 1rem 4rem 4rem;
+    grid-gap: 4rem;
   }
 }
 @media only screen and (min-width: 960px) {
