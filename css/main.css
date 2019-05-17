@@ -484,8 +484,6 @@ body {
 @media only screen and (min-width: 600px) {
   .grid__portfolioContainer--space {
     grid-template-columns: 1fr;
-    padding: 1rem 4rem 4rem;
-    grid-gap: 4rem;
   }
 }
 @media only screen and (min-width: 960px) {

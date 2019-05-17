@@ -207,7 +207,7 @@ body {
   
   &__link {
     text-decoration: none;
-	color: $whiteColour;
+	  color: $whiteColour;
   }
 
   &__navlink {
@@ -544,8 +544,6 @@ body {
       @media only screen and (min-width: 600px) {
         & {
           grid-template-columns: 1fr;
-          padding: 1rem 4rem 4rem;
-          grid-gap: 4rem;
         }
       }
     
