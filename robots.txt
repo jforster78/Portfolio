@@ -1,5 +1,7 @@
 # www.robotstxt.org/
 
+Sitemap: https://jforster78.github.io/Portfolio/sitemap.xml
+
 User-agent: *
 Disallow: /terms.html
 Disallow: /privacy.html
