@@ -291,14 +291,14 @@ body {
 .grid {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 250px min-content min-content 
+  grid-template-rows: 250px min-content min-content min-content
                       min-content min-content min-content 
                       min-content min-content min-content;
   grid-template-areas:
     "grid__slideShow"
 	  "grid__terms"  //Terms
     "grid__privacy"  //Privacy
-    "grid__car"  //Car Spec
+    "grid__display"  //Portfolio display
     "grid__about"
     "grid__quoteContainer"
     "grid__help"
@@ -308,7 +308,7 @@ body {
 
   @media only screen and (min-width: 600px) {
     & {
-      grid-template-rows: 600px min-content min-content 
+      grid-template-rows: 600px min-content min-content min-content
                           min-content min-content min-content 
                           min-content min-content min-content;
     }
@@ -324,7 +324,7 @@ body {
         "grid__slideShow grid__slideShow"
 		    "grid__terms grid__terms"  //Terms
         "grid__privacy grid__privacy"  //Privacy
-        "grid__car grid__car"  //Car Spec
+        "grid__display grid__display"  //Portfolio Display
         "grid__about grid__quoteContainer"
         "grid__help grid__help"
         "grid__portfolio grid__portfolio"
@@ -512,12 +512,6 @@ body {
     grid-area: grid__portfolio;
     background-color: $blackColour;
     color: $whiteColour;
-
-
-    &--white {
-      background-color: $whiteColour;
-      color: $blackColour;
-    }
   }
 
   &__portfolioContainer {
@@ -713,19 +707,10 @@ body {
     @include terms();
   }
 
-  //Car Spec
-  &__car {
-    grid-area: grid__car;
-    @include terms();
-  }
-
-  &__paragraph--white {
-    color: $whiteColour;
-  }
-  
-  &__bold {
-    font-weight: 700;
-	color: #000;
+  &__display {
+    grid-area: grid__display;
+    background-color: $gridBgColour;
+    color: $blackColour;
   }
 }
 
