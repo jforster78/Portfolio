@@ -549,9 +549,15 @@ body {
     }
   }
 
+  &__portfolioDisplay {
+    grid-area: grid__display;
+    background-color: $gridBgColour;
+    color: $blackColour;
+  }
+
   &__portfolioImage {
     width: 100%;
-    border: 1px solid $blackColour;
+    box-shadow: 0 2px 10px rgba(25, 25, 25, 0.5);
   }
 
   //Process
@@ -689,7 +695,7 @@ body {
   
   &__links {
 	  color: $paraColour;
-	  
+    
 	  &:hover {
 	  color: $bgColour;
 	  }
@@ -705,12 +711,6 @@ body {
   &__privacy {
     grid-area: grid__privacy;
     @include terms();
-  }
-
-  &__display {
-    grid-area: grid__display;
-    background-color: $gridBgColour;
-    color: $blackColour;
   }
 }
 
