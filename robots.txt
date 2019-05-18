@@ -1,0 +1,5 @@
+# www.robotstxt.org/
+
+User-agent: *
+Disallow: /terms.html
+Disallow: /privacy.html

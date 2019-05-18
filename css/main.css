@@ -254,12 +254,14 @@ body {
 .grid {
   display: grid;
   grid-template-columns: 1fr;
+  grid-template-rows: 250px -webkit-min-content -webkit-min-content -webkit-min-content -webkit-min-content -webkit-min-content -webkit-min-content  -webkit-min-content -webkit-min-content -webkit-min-content;
   grid-template-rows: 250px -webkit-min-content min-content -webkit-min-content min-content -webkit-min-content min-content  -webkit-min-content min-content -webkit-min-content;
   grid-template-rows: 250px min-content min-content min-content min-content min-content min-content  min-content min-content min-content;
   grid-template-areas: "grid__slideShow" "grid__terms" "grid__privacy" "grid__display" "grid__about" "grid__quoteContainer" "grid__help" "grid__portfolio" "grid__process" "grid__form";
 }
 @media only screen and (min-width: 600px) {
   .grid {
+    grid-template-rows: 600px -webkit-min-content -webkit-min-content -webkit-min-content -webkit-min-content -webkit-min-content -webkit-min-content  -webkit-min-content -webkit-min-content -webkit-min-content;
     grid-template-rows: 600px -webkit-min-content min-content -webkit-min-content min-content -webkit-min-content min-content  -webkit-min-content min-content -webkit-min-content;
     grid-template-rows: 600px min-content min-content min-content min-content min-content min-content  min-content min-content min-content;
   }
@@ -267,6 +269,7 @@ body {
 @media only screen and (min-width: 960px) {
   .grid {
     grid-template-columns: 1fr 1fr;
+    grid-template-rows: 500px -webkit-min-content -webkit-min-content -webkit-min-content -webkit-min-content  -webkit-min-content -webkit-min-content;
     grid-template-rows: 500px -webkit-min-content min-content -webkit-min-content min-content  -webkit-min-content min-content;
     grid-template-rows: 500px min-content min-content min-content min-content  min-content min-content;
     grid-template-areas: "grid__slideShow grid__slideShow" "grid__terms grid__terms" "grid__privacy grid__privacy" "grid__display grid__display" "grid__about grid__quoteContainer" "grid__help grid__help" "grid__portfolio grid__portfolio" "grid__process grid__form";
