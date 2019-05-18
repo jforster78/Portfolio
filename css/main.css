@@ -617,6 +617,7 @@ body {
 .grid__terms {
   grid-area: grid__terms;
   background-color: #eef0f3;
+  padding: 0 2rem 2rem;
 }
 @media only screen and (min-width: 600px) {
   .grid__terms {
@@ -626,6 +627,7 @@ body {
 .grid__privacy {
   grid-area: grid__privacy;
   background-color: #eef0f3;
+  padding: 0 2rem 2rem;
 }
 @media only screen and (min-width: 600px) {
   .grid__privacy {
@@ -635,6 +637,7 @@ body {
 .grid__car {
   grid-area: grid__car;
   background-color: #eef0f3;
+  padding: 0 2rem 2rem;
 }
 @media only screen and (min-width: 600px) {
   .grid__car {
