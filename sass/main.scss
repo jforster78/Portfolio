@@ -704,13 +704,25 @@ body {
   //Terms
   &__terms {
     grid-area: grid__terms;
+    background-color: $gridBgColour;
+  }
+
+  &__termsContainer {
     @include terms();
   }
 
   //Privacy
   &__privacy {
     grid-area: grid__privacy;
+    background-color: $gridBgColour;
+  }
+
+  &__privacyContainer {
     @include terms();
+  }
+
+  &__bold {
+    font-weight: 700;
   }
 }
 
@@ -778,15 +790,7 @@ body {
       @include xlgDesktop();
     }
   }
-
-  @media only screen and (min-width: $smMediaWidth) {
-    &__copyright, &__termPrivacy {
-      padding-left: 2rem;
-      display: flex;
-      align-items: center;
-    }
-  }
-  
+ 
   &__links {
 	text-decoration: none;
 	color: $whiteColour;

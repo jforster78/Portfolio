@@ -3,7 +3,7 @@
 //INITIALISE FIREBASE
 const config = {
   apiKey: "AIzaSyAf1MfuEzHphWug0xdWXBduNj-P5Bdf3hc",
-  authDomain: "portfolio-e01b4.firebaseapp.com",
+  authDomain: "www.jfweb.co.uk",
   databaseURL: "https://portfolio-e01b4.firebaseio.com",
   projectId: "portfolio-e01b4",
   storageBucket: "portfolio-e01b4.appspot.com",
