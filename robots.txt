@@ -1,7 +1,0 @@
-# www.robotstxt.org/
-
-Sitemap: https://www.jfweb.co.uk/sitemap.xml
-
-User-agent: *
-Disallow: /terms.html
-Disallow: /privacy.html
