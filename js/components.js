@@ -102,7 +102,7 @@ class toggleMenu extends HTMLElement {
           position: absolute;
           cursor: pointer;
           right: 1rem;
-          top: 1.1rem;
+          top: 0.8rem;
           font-size: 1.5rem;
           display: block;
         }
@@ -143,10 +143,10 @@ class toggleMenu extends HTMLElement {
           </div>
           <ul class="header__navlist">
             <li class="header__navitem header__navitem--left"><a href="index.html" class="header__link"><h1 class="header__h1">JF Web</h1></a></li>
-            <li class="header__navitem"><a class="header__navlink" href="#help">Services</a></li>
-            <li class="header__navitem"><a class="header__navlink" href="#portfolio">Portfolio</a></li>
-            <li class="header__navitem"><a class="header__navlink" href="#process">Process</a></li>
-            <li class="header__navitem"><a class="header__navlink header__navlink--noborder" href="#contact">Contact</a></li>
+            <li class="header__navitem"><a class="header__navlink" href="index.html#help">Services</a></li>
+            <li class="header__navitem"><a class="header__navlink" href="index.html#portfolio">Portfolio</a></li>
+            <li class="header__navitem"><a class="header__navlink" href="index.html#process">Process</a></li>
+            <li class="header__navitem"><a class="header__navlink header__navlink--noborder" href="index.html#contact">Contact</a></li>
           </ul>
         </nav>
       </header>`;

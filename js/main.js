@@ -1,7 +1,6 @@
-"use strict";
-
 //HOW I CAN HELP (ANIMATION)
-const animateWhatICanDo = (() => {
+const services = (() => {
+  "use strict";
   //Fade in how I can help when in viewpoint
   const fadeIn = () => {
     let elems;

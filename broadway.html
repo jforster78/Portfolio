@@ -41,9 +41,12 @@
     gtag('config', 'UA-140415959-1');
   </script>
 
+  <!-- Load the polyfill for Ms Edge -->
+  <script src="https://unpkg.com/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+
   <!--Style-->
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/normalize.min.css">
+  <link rel="stylesheet" href="css/main.min.css">
 
 </head>
 
@@ -54,29 +57,14 @@
       improve your experience and security.</p>
   <![endif] -->
 
-  <!-- Add your site or application content here -->
-  <header class="header">
-    <nav class="header__nav">
-      <div class="header__navbutton">
-        <div class="header__navbar1"></div>
-        <div class="header__navbar2"></div>
-        <div class="header__navbar3"></div>
-      </div>
-      <ul class="header__navlist">
-        <li class="header__navitem header__navitem--left"><a href="index.html" class="header__link"><h1 class="header__h1">JF Web</h1></a></li>
-        <li class="header__navitem"><a class="header__navlink" href="index.html#help">Services</a></li>
-        <li class="header__navitem"><a class="header__navlink" href="index.html#portfolio">Portfolio</a></li>
-        <li class="header__navitem"><a class="header__navlink" href="index.html#process">Process</a></li>
-        <li class="header__navitem"><a class="header__navlink header__navlink--noborder" href="index.html#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+  <!-- Header & Toggle Menu -->
+  <toggle-menu></toggle-menu>
 
   <main id="main" class="main">
     <div class="grid">
       
       <!--Background Images-->
-      <div class="grid__slideShow"></div>
+      <slide-show></slide-show>
 
       <!-- Car Spec -->
       <section class="grid__portfolioDisplay">
@@ -97,20 +85,18 @@
       </section>
     </div>
 
-    <!-- Back to the top-->
-    <div class="backToTheTop">
-      <div class="backToTheTop__button"></div>
-    </div>
+    <!-- To The Top Button -->
+    <to-top></to-top>
   </main>
 
   <footer class="footer">
-    <p class="footer__copyright"><small>Copyright &copy;<span id="date"> 2019 </span> JF Web</small></p>
+    <copyright-date></copyright-date>
 	  <p class="footer__termPrivacy"><small><a href="terms.html" class="footer__links">Terms of Service</a> | 
 	  <a href="privacy.html" class="footer__links">Privacy Policy</a></small></p>
   </footer>
 
   <script src="js/vendor/modernizr-3.7.1.min.js"></script>
-  <script src="js/main.js"></script>
+  <script type="module" src="js/components.min.js"></script>
   
 </body>
 

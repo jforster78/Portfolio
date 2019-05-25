@@ -1,6 +1,6 @@
 # www.robotstxt.org/
 
-Sitemap: https://jforster78.github.io/Portfolio/sitemap.xml
+Sitemap: https://www.jfweb.co.uk/sitemap.xml
 
 User-agent: *
 Disallow: /terms.html
