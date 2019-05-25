@@ -44,9 +44,10 @@
   <!-- Load the polyfill for Ms Edge -->
   <script src="https://unpkg.com/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
 
-   <!--Style-->
+     <!--Style-->
   <link rel="stylesheet" href="css/normalize.min.css">
   <link rel="stylesheet" href="css/main.min.css">
+  <link rel="stylesheet" href="css/sal.css">
 
 </head>
 
@@ -91,25 +92,25 @@
       <section id="help" class="grid__help grid__helpBgImage">
         <h2 class="grid__subheading">How I Can Help...</h2>
         <div class="grid__helpRow">
-          <div class="grid__helpColumn grid__hidden">
+          <div class="grid__helpColumn" data-sal="slide-right" data-sal-duration="1000" data-sal-delay="300">
             <img src="img/icons/design.png" alt="" class="grid__helpIcon">
             <h3 class="grid__subheading grid__subheading--margin">Web Design</h3>
             <p class="grid__paragraph">By using wireframes and prottypes based on your specification, 
               I can design you a responsive bespoke or WordPress DIVI website.</p>
           </div>
-          <div class="grid__helpColumn grid__hidden">
+          <div class="grid__helpColumn" data-sal="slide-left" data-sal-duration="1000" data-sal-delay="300">
             <img src="img/icons/dev.png" alt="" class="grid__helpIcon">
             <h3 class="grid__subheading grid__subheading--margin">Web Development</h3>
             <p class="grid__paragraph">Not only can I help with the design of a bespoke website, 
               I can help to improve your existing website or start over with a new development.</p>
           </div>
-          <div class="grid__helpColumn grid__hidden">
+          <div class="grid__helpColumn" data-sal="slide-right" data-sal-duration="1000" data-sal-delay="300">
             <img src="img/icons/wordpress.png" alt="" class="grid__helpIcon">
             <h3 class="grid__subheading grid__subheading--margin">WordPress DIVI</h3>
             <p class="grid__paragraph">Alternatively by using a popular CMS, such as WordPress 
               and Elegant's DIVI theme, I can create you a responsive website.</p>
           </div>
-          <div class="grid__helpColumn grid__hidden">
+          <div class="grid__helpColumn" data-sal="slide-left" data-sal-duration="1000" data-sal-delay="300">
             <img src="img/icons/seo.png" alt="" class="grid__helpIcon">
             <h3 class="grid__subheading grid__subheading--margin">SEO</h3>
             <p class="grid__paragraph">Through analyses of your websites semantics, meta tags, 
@@ -251,9 +252,16 @@
   <!-- Scripts -->
   <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase.js"></script>
   <script src="js/vendor/modernizr-3.7.1.min.js"></script>
-  <script src="js/main.min.js"></script>
   <script type="module" src="js/components.min.js"></script>
   <script src="js/form.min.js"></script>
+  <script src="js/sal.js"></script>
+  
+  <!-- Sal Config -->
+  <script>
+    sal ({
+      once: false
+    });
+  </script>
 
 </body>
 
