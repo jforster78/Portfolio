@@ -119,17 +119,23 @@ body {
 .grid {
   display: grid;
   grid-template-columns: 1fr;
+  grid-template-rows: 250px -webkit-min-content -webkit-min-content -webkit-min-content -webkit-min-content -webkit-min-content -webkit-min-content  -webkit-min-content -webkit-min-content -webkit-min-content;
+  grid-template-rows: 250px -webkit-min-content min-content -webkit-min-content min-content -webkit-min-content min-content  -webkit-min-content min-content -webkit-min-content;
   grid-template-rows: 250px min-content min-content min-content min-content min-content min-content  min-content min-content min-content;
   grid-template-areas: "grid__slideShow" "grid__terms" "grid__privacy" "grid__display" "grid__about" "grid__quoteContainer" "grid__help" "grid__portfolio" "grid__process" "grid__form";
 }
 @media only screen and (min-width: 600px) {
   .grid {
+    grid-template-rows: 600px -webkit-min-content -webkit-min-content -webkit-min-content -webkit-min-content -webkit-min-content -webkit-min-content  -webkit-min-content -webkit-min-content -webkit-min-content;
+    grid-template-rows: 600px -webkit-min-content min-content -webkit-min-content min-content -webkit-min-content min-content  -webkit-min-content min-content -webkit-min-content;
     grid-template-rows: 600px min-content min-content min-content min-content min-content min-content  min-content min-content min-content;
   }
 }
 @media only screen and (min-width: 960px) {
   .grid {
     grid-template-columns: 1fr 1fr;
+    grid-template-rows: 500px -webkit-min-content -webkit-min-content -webkit-min-content -webkit-min-content  -webkit-min-content -webkit-min-content;
+    grid-template-rows: 500px -webkit-min-content min-content -webkit-min-content min-content  -webkit-min-content min-content;
     grid-template-rows: 500px min-content min-content min-content min-content  min-content min-content;
     grid-template-areas: "grid__slideShow grid__slideShow" "grid__terms grid__terms" "grid__privacy grid__privacy" "grid__display grid__display" "grid__about grid__quoteContainer" "grid__help grid__help" "grid__portfolio grid__portfolio" "grid__process grid__form";
   }
@@ -187,10 +193,19 @@ body {
   font-size: 22px;
   background-color: #191919;
   color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 @media only screen and (min-width: 600px) {
   .grid__quoteContainer {
@@ -256,17 +271,29 @@ body {
 .grid__helpIcon {
   width: 4rem;
 }
+@-webkit-keyframes fade-in {
+  from {
+    opacity: 0;
+    -webkit-transform: scale(0.5, 0.5);
+            transform: scale(0.5, 0.5);
+  }
+  to {
+    opacity: 1;
+  }
+}
 @keyframes fade-in {
   from {
     opacity: 0;
-    transform: scale(0.5, 0.5);
+    -webkit-transform: scale(0.5, 0.5);
+            transform: scale(0.5, 0.5);
   }
   to {
     opacity: 1;
   }
 }
 .grid__fadeIn {
-  animation: fade-in 2s;
+  -webkit-animation: fade-in 2s;
+          animation: fade-in 2s;
 }
 .grid__hidden {
   opacity: 0;
@@ -311,7 +338,8 @@ body {
 }
 .grid__portfolioImage {
   width: 100%;
-  box-shadow: 0 2px 10px rgba(25, 25, 25, 0.5);
+  -webkit-box-shadow: 0 2px 10px rgba(25, 25, 25, 0.5);
+          box-shadow: 0 2px 10px rgba(25, 25, 25, 0.5);
 }
 .grid__process {
   grid-area: grid__process;
@@ -373,9 +401,12 @@ body {
   padding: 12px;
   border: 1px solid #565656;
   border-radius: 4px;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   resize: vertical;
-  appearance: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
 }
 .grid__formInput[type="text"][type="text"]:focus, .grid__formInput[type="text"][type="email"]:focus, .grid__formInput[type="text"][type="tel"]:focus, .grid__formInput[type="text"]:focus, .grid__formInput[type="email"][type="text"]:focus, .grid__formInput[type="email"][type="email"]:focus, .grid__formInput[type="email"][type="tel"]:focus, .grid__formInput[type="email"]:focus, .grid__formInput[type="tel"][type="text"]:focus, .grid__formInput[type="tel"][type="email"]:focus, .grid__formInput[type="tel"][type="tel"]:focus, .grid__formInput[type="tel"]:focus, .grid__formTextarea[type="text"]:focus, .grid__formTextarea[type="email"]:focus, .grid__formTextarea[type="tel"]:focus, .grid__formTextarea:focus {
   outline: 2px solid #586c8c;
@@ -404,7 +435,9 @@ body {
   border-radius: 4px;
   cursor: pointer;
   float: right;
-  appearance: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   font-weight: 600;
   width: 100%;
   outline: 0;
