@@ -53,19 +53,14 @@ class toggleMenu extends HTMLElement {
         .header__navitem {
           font-family: "subHeadings", serif;
         }
-        @media only screen and (min-width: 900px) {
-          .header__navitem {
-            padding: 0.5rem 0 0;
-          }
-        }
         .header__navitem--left {
           font-family: "title", cursive;
           color: #fff;
-          padding: 0.75rem 1rem;
+          padding: .75rem 1rem;
         }
         @media only screen and (min-width: 900px) {
           .header__navitem--left {
-            padding: 1.4rem 0 1rem 1rem;
+            padding: 1.5rem 0 1.5rem 1rem;
             flex-grow: 1;
           }
         }
@@ -87,7 +82,7 @@ class toggleMenu extends HTMLElement {
           .header__navlink {
             display: block;
             border-bottom: none;
-            padding: 1.5rem 1rem;
+            padding: 2rem 1rem;
           }
           .header__navlink:hover {
             color: #191919;
@@ -102,7 +97,7 @@ class toggleMenu extends HTMLElement {
           position: absolute;
           cursor: pointer;
           right: 1rem;
-          top: 0.8rem;
+          top: .8rem;
           font-size: 1.5rem;
           display: block;
         }

@@ -46,6 +46,7 @@ const formSubmission = (() => {
       formAlert.innerHTML = "Submit";
       formAlert.style.backgroundColor = "#586c8c";
       formAlert.style.opacity = ".3";
+      formAlert.style.transition = "1s";
       formAlert.setAttribute("disabled", "disabled");
     }, 5000);
 
@@ -80,6 +81,7 @@ window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('recaptcha', {
     console.log("dataCallback", response);
     const formAlert = document.querySelector(".grid__formAlert");
     formAlert.removeAttribute('disabled');
+    formAlert.style.transition = "1s";
     formAlert.style.opacity = "1";
   },
   "expired-callback": () => {
