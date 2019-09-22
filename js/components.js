@@ -164,7 +164,7 @@ class toggleMenu extends HTMLElement {
       });
   }
 }
-customElements.define("toggle-menu", toggleMenu);
+customElements.define("header-menu", toggleMenu);
 
 
 //SlideShow
@@ -185,13 +185,13 @@ class slideShow extends HTMLElement {
   connectedCallback() {
     this._root.innerHTML = `
     <style>
-      .grid__slideShow {
+      .grid__slides {
         position: relative;
         padding: 0;
         max-width: 100%;
         min-height: 100%;
       }
-      .grid__slideShow img {
+      .grid__slides img {
         -webkit-transition: opacity 2.5s;
         transition: opacity 2.5s;
         position: absolute;
@@ -207,55 +207,54 @@ class slideShow extends HTMLElement {
           min-height: 100%;
         }
       }
-      .grid__slideShow img.fadeIn {
+      .grid__slides img.fadeIn {
         opacity: 1;
       }
     </style>
 
-    <div class="grid__slideShow"></div>`;
+    <div class="grid__slides"></div>`;
 
     //Variables
     let curIndex = 0,
-    slider = this._root.querySelector(".grid__slideShow"),
+    slider = this._root.querySelector(".grid__slides"),
     slides = slider.childNodes,
     imgArray = [
       "img/slideShow/img1.jpg",
       "img/slideShow/img2.jpg",
       "img/slideShow/img3.jpg"
     ];
-  //Build the slideshow
-  const buildSlideShow = arr => {
-    for (let i = 0; i < arr.length; i++) {
-      const img = document.createElement("img");
-      img.src = arr[i];
-      slider.appendChild(img).setAttribute("alt", "Slide " + [i]);
-    }
-  };
-  //Fade in/out each slide
-  const fade = () => {
-    const fadeIn = ev => {
-      ev.className = "fadeIn";
+    //Build the slideshow
+    const buildSlideShow = arr => {
+      for (let i = 0; i < arr.length; i++) {
+        const img = document.createElement("img");
+        img.src = arr[i];
+        slider.appendChild(img).setAttribute("alt", "Slide " + [i]);
+      }
     };
-    const fadeOut = ev => {
-      ev.className = "";
+    //Fade in/out each slide
+    const fade = () => {
+      const fadeIn = ev => {
+        ev.className = "fadeIn";
+      };
+      const fadeOut = ev => {
+        ev.className = "";
+      };
+
+      fadeOut(slides[curIndex]);
+      curIndex++;
+      if (curIndex === slides.length) {
+        curIndex = 0;
+      }
+
+      fadeIn(slides[curIndex]);
+
+      //Fade in/out every 10 seconds
+      setTimeout(() => {
+        fade();
+      }, 10000); //10 seconds
     };
-
-    fadeOut(slides[curIndex]);
-    curIndex++;
-    if (curIndex === slides.length) {
-      curIndex = 0;
-    }
-
-    fadeIn(slides[curIndex]);
-
-    //Fade in/out every 10 seconds
-    setTimeout(() => {
-      fade();
-    }, 10000); //10 seconds
-  };
-  buildSlideShow(imgArray);
-  fade();
-  
+    buildSlideShow(imgArray);
+    fade();
   }
 }
 customElements.define("slide-show", slideShow);
@@ -286,18 +285,18 @@ class toTop extends HTMLElement {
         padding: 18px 15px 5px;
         border-radius: 50%;
       }
-        @media only screen and (min-width: 900px) {
+      @media only screen and (min-width: 900px) {
         .backToTheTop {
           background-color: #191919;
         }
       }
       .backToTheTop__button {
         border: solid #eef0f3;
-        border-width: 0 3px 3px 0;
+        border-width: 3px 0 0 3px;
         display: inline-block;
         padding: 7px;
-        -webkit-transform: rotate(-135deg);
-        transform: rotate(-135deg);
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
       }
     </style>
 
@@ -308,7 +307,7 @@ class toTop extends HTMLElement {
 
     //On scroll
     window.onscroll = () => {
-      //Show button once scrolled down more than 150px
+      //Show button once scrolled down more than 350px
       const scrollDown = () => {
         window.scrollY > 350
           ? (this._root.querySelector(".backToTheTop").style.display = "block")
@@ -316,12 +315,12 @@ class toTop extends HTMLElement {
       };
       scrollDown();
     };
-    let intervalId = 0;
     //Scroll step
+    let intervalId = 0;
     const scrollStep = () => {
       window.scrollY === 0
         ? clearInterval(intervalId)
-        : window.scroll(0, window.scrollY - 100);
+        : window.scroll(0, window.scrollY -250);
     };
     //Scroll every 16 milliseconds
     const scrollToTop = () => {
