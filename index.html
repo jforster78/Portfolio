@@ -209,11 +209,11 @@
             <div class="grid__formWrapper">
               <div class="grid__formRow">
                 <label class="grid__formLabel" for="fullname">Full Name</label>
-                <input class="grid__formInput" type="text" id="fullname" required />
+                <input class="grid__formInput" type="text" id="fullname" required minlength="2" maxlength="20" />
               </div>
               <div class="grid__formRow">
                 <label class="grid__formLabel" for="email">Email Address</label>
-                <input class="grid__formInput" type="email" id="email" required />
+                <input class="grid__formInput" type="email" id="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" />
               </div>
               <div class="grid__formRow">
                 <label class="grid__formLabel" for="phone">Phone Number</label>
